@@ -23,11 +23,11 @@ public class AutomataTaller4 {
                 i++;
                 if (i < cadena.length() && cadena.charAt(i) == 'b') {
                     i++;
+                    while (i < cadena.length() && cadena.charAt(i) == 'b') {
+                        i++;
+                    }
                     if (i < cadena.length() && cadena.charAt(i) == 'b') {
                         i++;
-                        while (i < cadena.length() && cadena.charAt(i) == 'b') {
-                            i++;
-                        }
                         if (i < cadena.length() && cadena.charAt(i) == 'a') {
                             i++;
                             if (i < cadena.length() && cadena.charAt(i) == 'b') {

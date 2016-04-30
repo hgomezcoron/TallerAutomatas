@@ -38,6 +38,9 @@ public class AutomataTaller1 {
                     break;
                 }
             }
+            if (i < cadena.length()) {
+                accepted = false;
+            }
             if (accepted) {
                 bw.write("Cadena valida");
                 bw.flush();
