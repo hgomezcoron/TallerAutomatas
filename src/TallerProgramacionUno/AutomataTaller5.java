@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class AutomataTaller1 {
+public class AutomataTaller5 {
 
     public static void main(String[] args) {
 
@@ -16,27 +16,46 @@ public class AutomataTaller1 {
         int i = 0;
         boolean accepted = true;
         try {
-            bw.write("Automata #1 // Escriba la cadena: ");
+            bw.write("Automata #5 // Escriba la cadena: ");
             bw.flush();
             cadena = br.readLine();
-            while (i < cadena.length()) {
+            if (i < cadena.length() && cadena.charAt(i) == 'b') {
+                i++;
+                while (i < cadena.length() && cadena.charAt(i) == 'b') {
+                    i++;
+                }
                 if (i < cadena.length() && cadena.charAt(i) == 'a') {
+                    i++;
+                    while (i < cadena.length() && cadena.charAt(i) == 'a') {
+                        i++;
+                    }
+                } else {
+                    accepted = false;
+                }
+            } else {
+                accepted = false;
+            }
+            while (i < cadena.length()) {
+                if (i < cadena.length() && cadena.charAt(i) == 'b') {
                     i++;
                     while (i < cadena.length() && cadena.charAt(i) == 'b') {
                         i++;
                     }
                     if (i < cadena.length() && cadena.charAt(i) == 'a') {
                         i++;
+                        while (i < cadena.length() && cadena.charAt(i) == 'a') {
+                            i++;
+                        }
                     } else {
                         accepted = false;
-                        break;
                     }
-                } else if (i < cadena.length() && cadena.charAt(i) == 'b') {
-                    i++;
-                } else{
+                } else {
                     accepted = false;
                     break;
                 }
+            }
+            if (i < cadena.length()) {
+                accepted = false;
             }
             if (accepted) {
                 bw.write("Cadena valida");
@@ -45,6 +64,7 @@ public class AutomataTaller1 {
                 bw.write("Cadena NO valida");
                 bw.flush();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
